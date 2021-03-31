@@ -1,0 +1,449 @@
+<!-- index.html -->
+<HTML>
+<HEAD>
+<TITLE>Welcome to Pang Du's Homepage</TITLE>
+</HEAD>
+
+<BODY BACKGROUND="http://www.stat.purdue.edu/~pdu/img/bakgrd.gif" TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000" ONLOAD="show()">
+
+<span id="liveclock" style="position:absolute;right:0;top:0;">
+</span>
+
+<script language="JavaScript">                                             
+<!--
+
+/*
+Upper Right Corner Live Clock Script- ) Dynamic Drive (www.dynamicdrive.com)
+For full source code, 100's more DHTML scripts, and TOS,
+visit http://www.dynamicdrive.com
+*/
+
+function show(){
+ if (!document.layers&&!document.all&&!document.getElementById)
+ return
+ var Digital=new Date()
+ var hours=Digital.getHours()
+ var minutes=Digital.getMinutes()
+ var seconds=Digital.getSeconds()
+ var dn="AM" 
+ if (hours>12){
+ dn="PM"
+ hours=hours-12
+ }
+ if (hours==0)
+ hours=12
+ if (minutes<=9)
+ minutes="0"+minutes
+ if (seconds<=9)
+ seconds="0"+seconds
+//change font size here to your desire
+myclock="<font size='2'>Current Time at Blacksburg, VA, USA: <b>"
+ +hours+":"+minutes+":" +seconds+dn+"</b></font>" 
+if (document.layers){
+document.layers.liveclock.document.write(myclock)
+document.layers.liveclock.document.close()
+}
+else if (document.all)
+liveclock.innerHTML=myclock
+else if (document.getElementById)
+document.getElementById("liveclock").innerHTML=myclock
+setTimeout("show()",1000)
+ }
+
+//-->
+</script>
+<p align=center>   
+<h1>Pang Du</h1>   
+
+Associate Professor <br>
+Department of Statistics <br>
+Virginia Tech <br>
+406-A Hutcheson Hall <br>
+Blacksburg, VA 24061-0439 <br>
+(540)231-5198 <br>
+<a href="mailto:pangdu@vt.edu">pangdu@vt.edu</a><br>
+</p>
+
+
+<!--
+<hr>
+
+<p>
+Here's a copy of my <a href="full_cv_Pang_Du.pdf">C.V.</a> in pdf. 
+</p> -->
+
+<hr>
+
+<h3>Research Interests</h3>
+
+<!--
+<p>
+My research is supported by NSF DMS-1007126 (06/01/10 to 05/31/13).
+</p>
+-->
+
+<ul>
+<li> <b>Functional data analysis and nonparametric smoothing</b>
+<br>
+Types of data: data of curves/surfaces/shapes, long time series or collection of time series, image data, data generated from nonlinear processes, data of complex objects.
+<li> <b>High dimensional data and statistical learning</b>
+<br>
+Types of data: bioinformatics data, data of high dimensions, network data, data for classification or clustering.
+<li> <b>Lifetime data analysis and survival models</b>
+<br>
+Types of data: data on failure times or terminal events, censored data, data with limits of detection.
+<li> <b>Diagnostic test data and ROC curve methodology</b>
+<br>
+Types of data: data on medical diagnostic tests, industrial testing data.
+</ul> 
+
+<hr>
+
+
+<h3>Education</h3>
+
+<table cellpadding="2" cellspacing="2" border="0" width="80%">
+ <tbody>
+  <tr> 
+	<td valign="top" width="8%">2006</td>
+	<td width="100%">Ph.D. in <a href="http://www.stat.purdue.edu">Statistics</a>,
+	  <a href="http://www.purdue.edu">Purdue University</a>
+	(Advisor: <a href="http://www.stat.purdue.edu/~chong/">Prof. Chong Gu</a>)</td>  
+  </tr>
+<!--  <tr>
+	<td valign="top" width="8%">2003</td>
+	<td width="100%">M.S. in <a href="http://www.stat.purdue.edu">Statistics</a>,
+	  <a href="http://www.purdue.edu">Purdue University</a>
+  </tr>
+  <tr>
+	<td valign="top" width="8%">09/1999-05/2002</td>
+	<td width="100%">Ph.D. Student in <a href="http://www.math.jhu.edu">Mathematics</a>,
+		<a href="http://www.jhu.edu">The Johns Hopkins University</a>
+  </tr> -->
+  <tr>
+	<td valign="top" width="8%">2002<br></td>
+	<td width="100%">M.A. in <a href="http://www.math.jhu.edu">Mathematics</a>,
+		<a href="http://www.jhu.edu">The Johns Hopkins University</a></td>
+  </tr>
+  <tr>
+	<td valign="top" width="8%">2002<br></td>
+	<td width="100%">M.S.E. in <a href="http://www.cs.jhu.edu">Computer Science</a>,
+		<a href="http://www.jhu.edu">The Johns Hopkins University</a>
+  </tr>
+  <tr>
+  	<td valign="top" width="8%">1999<br></td>
+	<td width="100%">M.S. in Mathematics,
+	<a href="http://www.ustc.edu.cn">University of Science and Technology of China</a>
+  </tr>
+  <tr>
+	<td width="8%">1996</td>
+	<td width="100%">B.S. in Mathematics,
+	<a href="http://www.ustc.edu.cn">University of Science and Technology of China</a>
+  </tr>
+ </tbody>
+</table> 
+
+
+<hr>
+
+<!--
+<h3>Selected Recent Publications</h3>
+-->
+<h3>Recent Publications</h3>
+
+<!--
+<font face="Verdana" size="3">
+*** A ranking of journals in Statistics can be found at the <a href="http://www.austms.org.au/tiki-read_article.php?articleId=31" target="_blank">Australian Mathematical Society</a>
+(released August 2009).
+<BR>(Four tiers: A* -- top 5%; A -- next 15%; B -- next 30%; and C -- lower 50%)
+
+<BR><BR> 
+*** Another ranking that may find agreement among many statisticians can be found <a href="http://www.journal-ranking.com/ranking/listCommonRanking.html?selfCitationWeight=1&externalCitationWeight=1&citingStartYear=1901&journalListId=443">here</a> (used data up to 2005).
+</font>
+-->
+
+<ul>
+<li> 
+  <b>Du, P.</b>, Sun, Z, Chen, H., Cho, J.-H., and Xu, S. (2018). 
+  Statistical estimation of malware detection metrics in the absence of ground truth, <i>
+  IEEE Transactions on Information Forensics and Security</i>, in press.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  Wind, L., Krometis, L.-A., Hession, W. C., Chen, C., <b>Du, P.</b>, Jacobs, K., Xia, K., and Pruden, A. (2018). 
+  Fate of pirlimycin and antibiotic-resistant fecal coliforms in field plots amended with dairy maure or compost during vegetable cultivation, <i>
+  Journal of Environmental Quality</i>, in press.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  Chen, T. and <b>Du, P.</b> (2018). 
+  Promotion time cure rate model with nonparametric form of covariate effects, <i>
+  Statistics in Medicine</i> 37(10), 1625-1635.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  Chen, T. and <b>Du, P.</b> (2018). 
+  Mixture cure rate models with accelerated failures and nonparametric form of covariate effects, <i>
+  Journal of Nonparametric Statistics</i> 30(1), 216-237.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  Gao, Z., Shang, Z., <b>Du, P.</b>, and Robertson, J. L. (2017). 
+  Variance change point detection under a smoothly-changing mean trend with application to liver procurement, <i>
+  Journal of the American Statistical Association</i>, in press.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  Sun, X., <b>Du, P.</b>, Wang, X., and Ma, P. (2016). 
+  Optimal penalized function-on-function regression under a reproducing kernel Hilbert space framework, <i>
+  Journal of the American Statistical Association</i>, in press.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  <b>Du, P.</b> (2014). 
+  Discussion of "Sparse semiparametric nonlinear model with application to chromatographic fingerprints" by Wierzbicki, Guo, Du and Guo, <i>
+  Journal of the American Statistical Association</i> 109, 1349-1350.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  Lian, H., <b>Du, P.</b>,  Li, Y., and Liang, H. (2014). 
+  Partially linear structure identification in generalized additive models with NP-dimensionality, <i>Computational Statistics and Data Analysis</i> 80, 197-208.
+  <font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  <b>Du, P.</b>,  Wu, P., and Liang, H. (2014). 
+  Variable selection for ultra-high-dimensional logistic models, <i>Contemporary Mathematics: Perspectives on Big Data Analysis</i> 622, 141-158.
+  <font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  Searle, C. L., Belden, L. K., <b>Du, P.</b>, and Blaustein, A. R. (2014). 
+  Stress and chytridiomycosis: Exogenous exposure to corticosterone does not alter amphibian susceptibility to a fungal pathogen, <i>Journal of Experimental Zoology Part A: Ecological Genetics and Physiology</i> 321(5), 243-253.
+  <font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  Chen, Y., <b>Du, P.</b>, and Wang, Y. (2014). 
+  Variable selection in linear models, <i>
+  WIREs Computational Statistics</i> 6, 1-9. 
+<br>(a "hopefully" comprehensive review of variable selection for linear regression models)<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  <b>Du, P.</b> and Wang, X. (2014). 
+  Penalized likelihood functional regression, <i>
+  Statistica Sinica</i> 24(2), 1017-1041. (program available at the journal site)<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  Wang, X., <b>Du, P.</b>, and Shen, J. (2013). 
+  Smoothing splines with varying smoothing parameter, <i>
+  Biometrika</i> 100(4), 955-970. (send <a href="mailto:pangdu@vt.edu">us</a>
+an email for the program used in the paper)<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  Chambers, D. L., Wojdak, J. M., <b>Du, P.</b>, and Belden, L. K. (2013). 
+  Pond acidification may explain differences in corticosterone among salamander populations, <i>Physiological and Biochemical Zoology</i> 2013(2), 224-232.
+  <font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  <b>Du, P.</b>, Parmeter, C. F., and Racine, J. S. (2013). 
+  Nonparametric kernel regression with multiple 
+  predictors and multiple shape constraints, <i>Statistica Sinica</i> 23(3), 1347-1371.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  <b>Du, P.</b> (2012). 
+  Invited book review for "Smoothing Splines: Methods and Applications" by Yuedong Wang, <i>
+  Biometrics</i> 68(4), 1327-1328.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  Liang, H. and <b>Du, P.</b> (2012). 
+  Maximum likelihood estimation in logistic regression models with a diverging number of covariates, <i>Electronic Journal of Statistics</i> 6, 1838-1846.
+  <font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  <b>Du, P.</b>, Cheng, G., and Liang, H. (2012). 
+  Semiparametric regression models with additive
+  nonparametric components and high dimensional parametric components, <i>Computational Statistics and Data Analysis</i> 56(6), 2006-2017.
+  <font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  Wang, L., <b>Du, P.</b>, and Liang, H. (2012). 
+  Two-component mixture cure rate model with
+  spline estimated nonparametric components, <i>
+  Biometrics</i> 68, 726-735.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  Ma, S. and <b>Du, P.</b> (2012). 
+  Variable selection in partly linear regression
+  model with diverging dimensions for right censored data, <i>
+  Statistica Sinica</i> 22, 1003-1020.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  Chambers, D. L., Wojdak, J. M., <b>Du, P.</b>, and Belden, L. K. (2011). 
+  Corticosterone level changes throughout larval development in the amphibians
+  <i>Rana sylvatica</i> and <i>Ambystoma jeffersoniannum</i>, <i>Copeia</i> 2011(4), 530-538.
+  <font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  <b>Du, P.</b>, Jiang, Y., and Wang, Y. (2011). 
+  Smoothing spline ANOVA frailty
+  model for recurrent event data, <i>
+  Biometrics</i> 67, 1330-1339.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  Tang, L., <b>Du, P.</b>, and Wu, C. (2010). 
+  Compare diagnostic tests using 
+  transformation-invariant smoothed ROC curves, <i>
+  Journal of Statistical Planning and Inference</i> 140, 3540-3551.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  <b>Du, P.</b> and Ma, S. (2010). 
+  Frailty 
+  model with spline estimated nonparametric
+  hazard function, <i>
+  Statistica Sinica</i> 20(2), 561-581.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  Woodall, W. H., Birch, J. B., and <b>Du, P.</b> (2010). 
+  Discussion of "Nonparametric 
+  profile monitoring by mixed effects modeling" by Qiu, Zou and Wang, <i>
+  Technometrics</i> 52, 285-287.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  <b>Du, P.</b>, Ma, S., and Liang, H. (2010). 
+  Penalized 
+  variable selection procedure for 
+  Cox models with semiparametric relative risk, <i>
+  Annals of Statistics</i> 38, 2092-2117.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  <b>Du, P.</b> and Tang, L. (2009). 
+  Transformation-invariant 
+  and nonparametric monotone smooth estimation of ROC curves, <i>
+  Statistics in Medicine </i>28: 349-359.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  <b>Du, P.</b> (2009). 
+  Nonparametric 
+  modeling of the gap time in recurrent event data, <i>
+  Lifetime Data Analysis </i> 15: 256-277.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  <b>Du, P.</b> and Gu, C. (2009). 
+  Penalized 
+  pseudo-likelihood hazard estimation:
+  a fast alternative to penalized likelihood, <i>
+  Journal of Statistical Planning and Inference </i>139: 891-899.<font face="Times New Roman"><b>
+  </b></font>
+<!--
+<li> 
+  <b>Du, P.</b> (2008). 
+  Nonparametric gap time
+  hazard estimation by smoothing splines, <i>
+  ASA Proceedings of the Joint Statistical Meetings</i>: 712-719.<font face="Times New Roman"><b>
+  </b></font>
+-->
+<li>
+  <b>Du, P.</b> and Gu, C. (2006). 
+  Penalized 
+  likelihood hazard estimation:
+  efficient approximation and Bayesian confidence intervals, <i>
+  Statistics and Probability Letters </i>76: 244-254.<font face="Times New Roman"><b>
+  </b></font> 
+</ul>
+
+<!--
+<hr>
+<br><br>
+<h3><a href="kids.html">"My PRECIOUS!!!"</a></h3>
+-->
+
+<!--
+<h3>Manuscripts</h3>
+<ul>
+<li> 
+  Wang, X., <b>Du, P.</b>, and Shen, J. (2011). 
+  Smoothing splines with varying smoothing parameter, submitted.<font face="Times New Roman"><b>
+  </b></font>
+<li> 
+  <b>Du, P.</b>, Wu, P., and Liang, H. (2011). 
+  Estimation 
+  and variable selection for high-dimensional logistic models, submitted.<font face="Times New Roman"><b>
+  </b></font>
+</ul>
+
+<hr>
+
+
+<h3>Professional Services</h3>
+<ul>
+<li> 
+  I have served as a referee for 21 statistical journals:
+  <i>BMC Medical Research Methodology</i>,
+  <i>Bioinformatics</i>,
+  <i>Biometrics</i>,
+  <i>Biostatistics</i>,
+  <i>Canadian Journal of Statistics</i>,
+  <i>Computational Statistics and Data Analysis</i>,
+  <i>Environmental and Ecological Statistics</i>,
+  <i>Electronic Journal of Statistics</i>,
+  <i>Electronic Journal of Structural Engineering</i>,
+  <i>International Journal of Biostatistics</i>,
+  <i>Journal of Applied Statistics</i>,
+  <i>Journal of Computational and Graphical Statistics</i>,
+  <i>Journal of Statistical Computation and Simulation</i>,
+  <i>Journal of Statistical and Planning Inference</i>,
+  <i>Journal of the American Statistical Association (TM & ACS)</i>,
+  <i>Journal of the Korean Statistical Society</i>,
+  <i>Journal of the Royal Statistical Society: Series B</i>,
+  <i>Lifetime Data Analysis</i>,
+  <i>Scandinavian Journal of Statistics</i>,
+  <i>Statistics in Medicine</i>,
+  <i>Technometrics</i>,
+  <i>WIRES Computational Statistics</i>.
+<li> 
+  I am also a volunteer reviewer for <a href="http://www.ams.org/mr-database"><i>Mathematical Reviews</i></a>, writing short reviews on published statistical papers.
+</ul>
+
+
+<hr>
+
+
+<h3>Honors</h3>
+<ul>
+<li> 
+  <b>Elected Member</b> of the International Statistical Institute.
+<li> 
+  <b>Paper Award</b>, Section on Statistics in Epidemiology, American Statistical Association. Salt Lake City, 
+	UT. July 29 - August 2, 2007.
+<li> 
+  <b>Best Paper Award</b>, ICSA 2006 Applied Statistics Symposium. Storrs, CT. June 14 - 17, 2006.
+<li>
+  <b>Ross Assistantship</b>, Purdue University, August 2002 - August 2006.
+</ul>
+
+
+-->
+
+
+<BR><BR><BR><BR>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=6401978; 
+var sc_invisible=1; 
+var sc_security="2b72eda1"; 
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script><noscript><div
+class="statcounter"><a title="tumblr tracker"
+href="http://statcounter.com/tumblr/" target="_blank"><img
+class="statcounter"
+src="http://c.statcounter.com/6401978/0/2b72eda1/1/"
+alt="tumblr tracker" ></a></div></noscript>
+<!-- End of StatCounter Code -->
+ 
+ 
+</BODY>
+
+</HTML>
+<!-- Begin Motigo Webstats counter code -->
+<!--
+<a id="mws4803796" href="http://webstats.motigo.com/">
+<img width="80" height="15" border="0" alt="Free counter and web stats" src="http://m1.webstats.motigo.com/n80x15.gif?id=AElM1ArdrRH3QpFHOrGY2tvfROMg" /></a>
+<script src="http://m1.webstats.motigo.com/c.js?id=4803796&amp;lang=EN&amp;i=3" type="text/javascript"></script>
+-->
+<!-- End Motigo Webstats counter code --> 
+ 
+
