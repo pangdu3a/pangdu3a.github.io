@@ -1,0 +1,194 @@
+
+
+<!-- people.html -->
+<HTML>
+<HEAD>
+<TITLE>Professor Pang Du's Research Group</TITLE>
+<style>
+.topnav {
+  overflow: hidden;
+  background-color: #800000;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #CF4420;
+  color: white;
+}
+</style>
+</HEAD>
+
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000" ONLOAD="show()">
+
+<span id="liveclock" style="position:absolute;right:0;top:0;">
+</span>
+
+<script language="JavaScript">                                             
+<!--
+
+/*
+Upper Right Corner Live Clock Script- ) Dynamic Drive (www.dynamicdrive.com)
+For full source code, 100's more DHTML scripts, and TOS,
+visit http://www.dynamicdrive.com
+*/
+
+function show(){
+ if (!document.layers&&!document.all&&!document.getElementById)
+ return
+ var Digital=new Date()
+ var hours=Digital.getHours()
+ var minutes=Digital.getMinutes()
+ var seconds=Digital.getSeconds()
+ var dn="AM" 
+ if (hours>12){
+ dn="PM"
+ hours=hours-12
+ }
+ if (hours==0)
+ hours=12
+ if (minutes<=9)
+ minutes="0"+minutes
+ if (seconds<=9)
+ seconds="0"+seconds
+//change font size here to your desire
+myclock="<font size='2'>Current Time at Blacksburg, VA, USA: <b>"
+ +hours+":"+minutes+":" +seconds+dn+"</b></font>" 
+if (document.layers){
+document.layers.liveclock.document.write(myclock)
+document.layers.liveclock.document.close()
+}
+else if (document.all)
+liveclock.innerHTML=myclock
+else if (document.getElementById)
+document.getElementById("liveclock").innerHTML=myclock
+setTimeout("show()",1000)
+ }
+
+//-->
+</script>
+
+<br>
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a class="active" href="people.html">People</a>
+  <a href="research.html">Research</a>
+  <a href="teaching.html">Teaching</a>
+</div>
+
+<p><h3>Here are the people who have done all the work to make it possible for Professor Pang Du to enjoy his life!</h3></p>
+
+<hr>
+
+<h2>Current Members</h2>
+
+<p> 
+ <table>
+ <tr>
+  <td>
+  <p>
+  <img width=192 height=256 src="files/Youngjin_Cho.jpeg"> 
+  </p>
+  </td>
+<td> </td>
+  <td>
+  <b>Youngjin Cho</b>, PhD student
+  <p> 403A Hutcheson Hall</p>
+  <p> <a href="mailto:youngjin@vt.edu">youngjin@vt.edu</a></p>
+  </td>
+ </tr>
+
+ <tr>
+  <td>
+  <p>
+  <img width=192 height=256 src="files/Zhiyuan_Du.jpeg"> 
+  </p>
+  </td>
+<td> </td>
+  <td>
+  <b>Zhiyuan Du</b>, PhD student
+  <p> 403A Hutcheson Hall</p>
+  <p> <a href="mailto:zhiyuan@vt.edu">zhiyuan@vt.edu</a></p>
+  </td>
+ </tr>
+
+ <tr>
+  <td>
+  <p>
+  <img width=192 height=256 src="files/Xiaofan_Zhu.jpeg"> 
+  </p>
+  </td>
+<td> </td>
+  <td>
+  <b>Xiaofan Zhu</b>, PhD student
+  <p> 403A Hutcheson Hall</p>
+  <p> <a href="mailto:zxiaofan@vt.edu">zxiaofan@vt.edu</a></p>
+  </td>
+ </tr>
+
+<tr>
+  <td>
+  <p>
+  <img width=192 height=256 src="files/Anbin_Rhee.jpeg"> 
+  </p>
+  </td>
+<td> </td>
+  <td>
+  <b>Anbin Rhee</b>, PhD student
+  <p> 403A Hutcheson Hall</p>
+  <p> <a href="mailto:abrhee@vt.edu">abrhee@vt.edu</a></p>
+  </td>
+ </tr>
+</table>	
+</p>
+
+<hr>
+<h2>Former Members</h2>
+
+<ul>
+<li>
+<b>Quyen Do</b> (PhD 2022), Corning Inc.
+</li>
+<br>
+<li>
+<b>Yunnan Xu</b> (PhD 2020), Novartis Oncology.
+</li>
+<br>
+<li>
+<b>Yafei Zhang</b> (PhD 2019), Merck & Co.
+</li>
+<br>
+<li>
+<b>Zhengguo Gao</b> (PhD 2018), Shanghai Jiaotong University.
+</li>
+<br>
+<li>
+<b>Jinhui Sun</b> (PhD 2016), JD.com Inc.
+</li>
+<br>
+<li>
+<b>Tianlei Chen</b> (PhD 2015), Celgene Corporation.
+</li>
+<br>
+<li>
+<b>Lu Wang</b> (PhD 2010), Novartis Oncology.
+</li>
+
+</ul>
+
+<hr>
+    <footer id="footer">
+        <p>Copyright &#169; 2021, <strong>Pang Du</strong>
+	</footer>

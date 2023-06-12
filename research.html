@@ -1,12 +1,37 @@
 
 
-<!-- index.html -->
+<!-- research.html -->
 <HTML>
 <HEAD>
-<TITLE>Welcome to Professor Pang Du's Homepage</TITLE>
+<TITLE>Professor Pang Du's Research</TITLE>
+<style>
+.topnav {
+  overflow: hidden;
+  background-color: #800000;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #CF4420;
+  color: white;
+}
+</style>
 </HEAD>
 
-<BODY BACKGROUND="http://www.stat.purdue.edu/~pdu/img/bakgrd.gif" TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000" ONLOAD="show()">
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000" ONLOAD="show()">
 
 <span id="liveclock" style="position:absolute;right:0;top:0;">
 </span>
@@ -55,111 +80,20 @@ setTimeout("show()",1000)
 //-->
 </script>
 
-<p> 
- <table>
- <tr>
-  <td>
-  <p>
-  <img width=200 height=240 src="pd.jpg"> 
-  </p>
-  </td>
-<td> </td>
-  <td>
-  <h1> Pang Du</h1>&nbsp;(my <a href="name.html">Chinese name</a>)
-  <p> Professor</p>
-  <p><a href="http://www.stat.vt.edu/"> Department of Statistics</a></p> 
-  <p><a href="http://www.vt.edu/">Virginia Tech</a></p>
-  <p> 409E Hutcheson Hall, Blacksburg, VA 24061</p>
-  <p> Phone: 540-231-5198 </p>
-  <p> <a href="mailto:pangdu@vt.edu">pangdu@vt.edu</a></p>
-  </td>
- </tr>
-</table>
 <br>
-Here's a copy of my <a href="cv_Pang_Du.pdf">C.V.</a>. 	
-</p>
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="people.html">People</a>
+  <a class="active" href="research.html">Research</a>
+  <a href="teaching.html">Teaching</a>
+</div>
 
-
+<h3>Here is a complete list of the publications from Professor Pang Du's research group.</h3>
 
 <hr>
 
-<h3>Research Interests</h3>
-
-<!--
-<p>
-My research is supported by NSF DMS-1007126 (06/01/10 to 05/31/13).
-</p>
--->
-
-<ul>
-<li> <b>Functional data analysis and nonparametric smoothing</b>
-<br>
-Types of data: data of curves/surfaces/shapes, long time series or collection of time series, image data, data generated from nonlinear processes, data of complex objects.
-<li> <b>High dimensional data and statistical learning</b>
-<br>
-Types of data: bioinformatics data, data of high dimensions, network data, data for classification or clustering.
-<li> <b>Lifetime data analysis and survival models</b>
-<br>
-Types of data: data on failure times or terminal events, censored data, data with limits of detection.
-<li> <b>Diagnostic test data and ROC curve methodology</b>
-<br>
-Types of data: data on medical diagnostic tests, industrial testing data.
-</ul> 
-
-<hr>
-
-
-<h3>Education</h3>
-
-<table cellpadding="2" cellspacing="2" border="0" width="80%">
- <tbody>
-  <tr> 
-	<td valign="top" width="8%">2006</td>
-	<td width="100%">Ph.D. in <a href="http://www.stat.purdue.edu">Statistics</a>,
-	  <a href="http://www.purdue.edu">Purdue University</a>
-	(Advisor: <a href="http://www.stat.purdue.edu/~chong/">Prof. Chong Gu</a>)</td>  
-  </tr>
-<!--  <tr>
-	<td valign="top" width="8%">2003</td>
-	<td width="100%">M.S. in <a href="http://www.stat.purdue.edu">Statistics</a>,
-	  <a href="http://www.purdue.edu">Purdue University</a>
-  </tr>
-  <tr>
-	<td valign="top" width="8%">09/1999-05/2002</td>
-	<td width="100%">Ph.D. Student in <a href="http://www.math.jhu.edu">Mathematics</a>,
-		<a href="http://www.jhu.edu">The Johns Hopkins University</a>
-  </tr> -->
-  <tr>
-	<td valign="top" width="8%">2002<br></td>
-	<td width="100%">M.A. in <a href="http://www.math.jhu.edu">Mathematics</a>,
-		<a href="http://www.jhu.edu">The Johns Hopkins University</a></td>
-  </tr>
-  <tr>
-	<td valign="top" width="8%">2002<br></td>
-	<td width="100%">M.S.E. in <a href="http://www.cs.jhu.edu">Computer Science</a>,
-		<a href="http://www.jhu.edu">The Johns Hopkins University</a>
-  </tr>
-  <tr>
-  	<td valign="top" width="8%">1999<br></td>
-	<td width="100%">M.S. in Mathematics,
-	<a href="http://www.ustc.edu.cn">University of Science and Technology of China</a>
-  </tr>
-  <tr>
-	<td width="8%">1996</td>
-	<td width="100%">B.S. in Mathematics,
-	<a href="http://www.ustc.edu.cn">University of Science and Technology of China</a>
-  </tr>
- </tbody>
-</table> 
-
-
-<hr>
-
-<!--
-<h3>Selected Recent Publications</h3>
--->
-<h3>Research Publications</h3>
-
+<h2>Research Publications</h2>
+(last updated 2021)
 
 <ul>
 <li> 
@@ -387,8 +321,10 @@ an email for the program used in the paper)<font face="Times New Roman"><b>
   </b></font> 
 </ul>
 
-
-
+<hr>
+    <footer id="footer">
+        <p>Copyright &#169; 2021, <strong>Pang Du</strong>
+	</footer>
 
 <BR><BR><BR><BR>
 

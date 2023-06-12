@@ -3,10 +3,35 @@
 <!-- index.html -->
 <HTML>
 <HEAD>
-<TITLE>Welcome to Pang Du's Homepage</TITLE>
+<TITLE>Welcome to Professor Pang Du's Homepage</TITLE>
+<style>
+.topnav {
+  overflow: hidden;
+  background-color: #800000;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #CF4420;
+  color: white;
+}
+</style>
 </HEAD>
 
-<BODY BACKGROUND="http://www.stat.purdue.edu/~pdu/img/bakgrd.gif" TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000" ONLOAD="show()">
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000" ONLOAD="show()">
 
 <span id="liveclock" style="position:absolute;right:0;top:0;">
 </span>
@@ -54,35 +79,54 @@ setTimeout("show()",1000)
 
 //-->
 </script>
-<p align=center>   
-<h1>Pang Du</h1>   
 
-Professor <br>
-Department of Statistics <br>
-Virginia Tech <br>
-406-A Hutcheson Hall <br>
-Blacksburg, VA 24061-0439 <br>
-(540)231-5198 <br>
-<a href="mailto:pangdu@vt.edu">pangdu@vt.edu</a><br>
+<br>
+<div class="topnav">
+  <a class="active" href="index.html">Home</a>
+  <a href="people.html">People</a>
+  <a href="research.html">Research</a>
+  <a href="teaching.html">Teaching</a>
+</div>
+
+
+<style type="text/css">
+.s0 {font-size: 24;}
+.s1 {font-size: 17;font-family: Courier;}
+</style>
+
+<p> 
+ <table>
+ <tr>
+  <td>
+  <p>
+  <img width=200 height=240 src="pd.jpg"> 
+  </p>
+  </td>
+<td> </td>
+  <td>
+  <span class="s0"><b>Pang Du</b></span> (my <a href="name.html">Chinese name</a>)
+  <p> Professor</p>
+  <p><a href="http://www.stat.vt.edu/"> Department of Statistics</a></p> 
+  <p><a href="http://www.vt.edu/">Virginia Tech</a></p>
+  <p> 409E Hutcheson Hall, Blacksburg, VA 24061</p>
+  <p> Phone: 540-231-5198 </p>
+  <p> <a href="mailto:pangdu@vt.edu">pangdu@vt.edu</a></p>
+  </td>
+ </tr>
+</table>
+<br>
+I am a statistician interested in both statistical methodological research and statistical applications. My recent research interests in statistical methodology include functional data analysis, big data analytics, lifetime data analysis, and ROC curve methodology. I welcome collaborations from all disciplines and have collaborated with researchers from engineering, public health, computer science, and biology.
+<br>
+I joined Virginia Tech in 2006 upon obtaining my PhD from the <a href="http://www.stat.purdue.edu/">Department of Statistics</a> at <a href="http://www.purdue.edu/">Purdue University</a>. My earlier alma maters are <a href="http://www.ustc.edu.cn/">University of Science and Technology of China</a> and <a href="http://www.jhu.edu/">Johns Hopkins University</a>. 
+<br><br>
+Here's a copy of my <a href="cv_Pang_Du.pdf">CV</a>. 	
 </p>
 
 
-<!--
-<hr>
-
-<p>
-Here's a copy of my <a href="full_cv_Pang_Du.pdf">C.V.</a> in pdf. 
-</p> -->
 
 <hr>
 
 <h3>Research Interests</h3>
-
-<!--
-<p>
-My research is supported by NSF DMS-1007126 (06/01/10 to 05/31/13).
-</p>
--->
 
 <ul>
 <li> <b>Functional data analysis and nonparametric smoothing</b>
@@ -99,8 +143,8 @@ Types of data: data on failure times or terminal events, censored data, data wit
 Types of data: data on medical diagnostic tests, industrial testing data.
 </ul> 
 
+<!--
 <hr>
-
 
 <h3>Education</h3>
 
@@ -112,7 +156,7 @@ Types of data: data on medical diagnostic tests, industrial testing data.
 	  <a href="http://www.purdue.edu">Purdue University</a>
 	(Advisor: <a href="http://www.stat.purdue.edu/~chong/">Prof. Chong Gu</a>)</td>  
   </tr>
-<!--  <tr>
+ <tr>
 	<td valign="top" width="8%">2003</td>
 	<td width="100%">M.S. in <a href="http://www.stat.purdue.edu">Statistics</a>,
 	  <a href="http://www.purdue.edu">Purdue University</a>
@@ -121,7 +165,7 @@ Types of data: data on medical diagnostic tests, industrial testing data.
 	<td valign="top" width="8%">09/1999-05/2002</td>
 	<td width="100%">Ph.D. Student in <a href="http://www.math.jhu.edu">Mathematics</a>,
 		<a href="http://www.jhu.edu">The Johns Hopkins University</a>
-  </tr> -->
+  </tr> 
   <tr>
 	<td valign="top" width="8%">2002<br></td>
 	<td width="100%">M.A. in <a href="http://www.math.jhu.edu">Mathematics</a>,
@@ -144,244 +188,119 @@ Types of data: data on medical diagnostic tests, industrial testing data.
   </tr>
  </tbody>
 </table> 
-
+-->
 
 <hr>
 
-<!--
-<h3>Selected Recent Publications</h3>
--->
-<h3>Research Publications</h3>
+<h3>Selected Publications</h3>
 
 
 <ul>
 <li> 
- Wang, L., <b>Du, P.</b>, and Jin, R. (2021).
-MOSS: multi-modal best subset modeling in smart manufacturing.
-<i>Sensors</i> 21(1), 1-18.<font face="Times New Roman"><b>
-  </b></font>
+ Xing, X., Shang, Z., <b>Du, P.</b>, Ma, P., Zhong, W., and Liu, J. S. (2023).
+Minimax nonparametric multi-sample test under smoothing.
+<i>Statistica Sinica</i>, to appear.
+<li> 
+ <b>Du, P.</b>, Parmeter, C. F., and Racine, J. S. (2023).
+Shape constrained kernel PDF and PMF estimation.
+<i>Statistica Sinica</i>, to appear.
+<li> 
+ Jin, H., Sun, X., and <b>Du, P.</b> (2023).
+Optimal function-on-function regression with interaction between functional predictors.
+<i>Statistica Sinica</i> 33(2), 1047-1068.
 <li> 
  Xu, Y., <b>Du, P.</b>, Senger, R., Robertson, J., and Pirkle, J. (2021).
 ISREA: An efficient peak-preserving baseline correction algorithm for Raman spectra.
-<i>Applied Spectroscopy</i> 75(1): 34-45.<font face="Times New Roman"><b>
-  </b></font>
-<li> 
- Sun, J., <b>Du, P.</b>, Miao, H., and Liang, H. (2020).
-Robust feature screening procedures for single and mixed types of data.
-<i>Journal of Statistical Computation and Simulation</i> 90(7), 1173-1193.<font face="Times New Roman"><b>
-  </b></font>
-<li> 
- Huttanus, H.M., Vu, T., Guruli, G., Tracey, A., Carswell, W., Said, N., <b>Du, P.</b>, Parkinson, B.G., Orlando, G., and Robertson, J.L. (2020).
-Raman chemometric urinalysis (Rametrix) as a screen for bladder cancer, <i>PLoS ONE</i> 15(8), e0237070.<font face="Times New Roman"><b>
-  </b></font>
-<li> 
-  Senger, R. S., Sullivan, M., Gouldin, A., Lundgren, S., Merrifield, K., Steen, C., Baker, E., Vu, T., Agnor, B., Martinez, G., Coogan, H., Carswell, W., Kavuru, V., Karageorge, L., Dev, D., <b>Du, P.</b>, Sklar, A., Pirkle, J., Guelich, S., Orlando, G., and Robertson, J. L. (2020).
-Spectral characteristics of urine from patients with end-stage kidney disease analyzed using Raman chemometric urinalysis (Rametrix), <i>PLoS ONE</i> 15(1), e0227281.<font face="Times New Roman"><b>
-  </b></font>
-<li> 
- Li, M., Knolton, K., Pruden, A., Ponder, M., Xia, K., Teets, C., and <b>Du, P.</b> (2020).
-Fate of pirlimycin and antibiotic resistance genes in dairy manure slurries in response to temperature and pH adjustment.
-<i>Science of Total Environment</i> 710: 136310.<font face="Times New Roman"><b></b></font>
+<i>Applied Spectroscopy</i> 75(1): 34-45.
 <li> 
  Gao, Z., <b>Du, P.</b>, Jin, R., and Robertson, J. L. (2020).
 Surface temperature monitoring in liver procurement via functional variance change point analysis,
-<i>Annals of Applied Statistics</i> 14(1), 143-159.<font face="Times New Roman"><b>
-  </b></font>
-<li> 
-  Chen, C., Pankow, C. A., Oh, M., Heath, L. S., Zhang, L., <b>Du, P.</b>, Xia, K., and Pruden, A.(2019). Effect of antibiotic use and composting on antibiotic resistance gene abundance and resistome risks of soils receiving manure-derived amendments,
-<i>Environmental International</i> 128, 233-243.<font face="Times New Roman"><b>
-  </b></font>
-<li> 
-  Senger, R. S., Kavuru, V., Sullivan, M., Gouldin, A., Lundgren, S., Merrifield, K., Steen, C., Baker, E., Vu, T., Agnor, B., Martinez, G., Coogan, H., Carswell, W., Karageorge, L., Dev, D., <b>Du, P.</b>, Sklar, A., Orlando, G., Pirkle, J., and Robertson, J. L. (2019). 
-  Spectral characteristics of urine specimens from healthy human volunteers analyzed using Raman chemometric urinalysis (Rametrix), <i>PLoS ONE</i> 14(9), e0222115.<font face="Times New Roman"><b>
-  </b></font>
+<i>Annals of Applied Statistics</i> 14(1), 143-159.
 <li> 
   Gao, Z., Shang, Z., <b>Du, P.</b>, and Robertson, J. L. (2019). 
-  Variance change point detection under a smoothly-changing mean trend with application to liver procurement, <i>Journal of the American Statistical Association</i> 114(526), 773-781.<font face="Times New Roman"><b>
-  </b></font>
+  Variance change point detection under a smoothly-changing mean trend with application to liver procurement, <i>Journal of the American Statistical Association</i> 114(526), 773-781.
 <li> 
-  Chen, C., Guron, G. K., Pruden, A., Ponder, M., <b>Du, P.</b>, and Xia, K. (2018). 
-  Antibiotics and antibiotic resistance genes in bulk and rhizosphere soils subject to manure amendment and vegetable cultivation, <i>
-  Journal of Environmental Quality</i> 47(6), 1318-1326.<font face="Times New Roman"><b>
-  </b></font>
-<li> 
-  Charlton, J., <b>Du, P.</b>, Cho, J.-H., and Xu, S. (2018). 
-  Measuring relative accuracy of malware detectors in the absence of ground truth, <i>
-  IEEE MILCOM 2018</i>.<font face="Times New Roman"><b>
-  </b></font>
+  Gao, Z., Shang, Z., <b>Du, P.</b>, and Robertson, J. L. (2019). 
+  Variance change point detection under a smoothly-changing mean trend with application to liver procurement, <i>
+  Journal of the American Statistical Association</i> 114(526), 773-781.
 <li> 
   <b>Du, P.</b>, Sun, Z, Chen, H., Cho, J.-H., and Xu, S. (2018). 
   Statistical estimation of malware detection metrics in the absence of ground truth, <i>
-  IEEE Transactions on Information Forensics and Security</i> 13(12), 2965-2980.<font face="Times New Roman"><b>
-  </b></font>
-<li> 
-  Wind, L., Krometis, L.-A., Hession, W. C., Chen, C., <b>Du, P.</b>, Jacobs, K., Xia, K., and Pruden, A. (2018). 
-  Fate of pirlimycin and antibiotic-resistant fecal coliforms in field plots amended with dairy maure or compost during vegetable cultivation, <i>
-  Journal of Environmental Quality</i> 47, 436-444.<font face="Times New Roman"><b>
-  </b></font>
+  IEEE Transactions on Information Forensics and Security</i> 13(12), 2965-2980.
 <li> 
   Chen, T. and <b>Du, P.</b> (2018). 
   Promotion time cure rate model with nonparametric form of covariate effects, <i>
-  Statistics in Medicine</i> 37(10), 1625-1635.<font face="Times New Roman"><b>
-  </b></font>
+  Statistics in Medicine</i> 37(10), 1625-1635.
 <li> 
-  Chen, T. and <b>Du, P.</b> (2018). 
-  Mixture cure rate models with accelerated failures and nonparametric form of covariate effects, <i>
-  Journal of Nonparametric Statistics</i> 30(1), 216-237.<font face="Times New Roman"><b>
-  </b></font>
-<li> 
-  Gao, Z., Shang, Z., <b>Du, P.</b>, and Robertson, J. L. (2017). 
-  Variance change point detection under a smoothly-changing mean trend with application to liver procurement, <i>
-  Journal of the American Statistical Association</i>, in press.<font face="Times New Roman"><b>
-  </b></font>
-<li> 
-  Sun, X., <b>Du, P.</b>, Wang, X., and Ma, P. (2016). 
+  Sun, X., <b>Du, P.</b>, Wang, X., and Ma, P. (2018). 
   Optimal penalized function-on-function regression under a reproducing kernel Hilbert space framework, <i>
-  Journal of the American Statistical Association</i>, in press.<font face="Times New Roman"><b>
-  </b></font>
-<li> 
-  <b>Du, P.</b> (2014). 
-  Discussion of "Sparse semiparametric nonlinear model with application to chromatographic fingerprints" by Wierzbicki, Guo, Du and Guo, <i>
-  Journal of the American Statistical Association</i> 109, 1349-1350.<font face="Times New Roman"><b>
-  </b></font>
+  Journal of the American Statistical Association</i> 113(524), 1601-1611.
 <li> 
   Lian, H., <b>Du, P.</b>,  Li, Y., and Liang, H. (2014). 
   Partially linear structure identification in generalized additive models with NP-dimensionality, <i>Computational Statistics and Data Analysis</i> 80, 197-208.
-  <font face="Times New Roman"><b>
-  </b></font>
-<li> 
-  <b>Du, P.</b>,  Wu, P., and Liang, H. (2014). 
-  Variable selection for ultra-high-dimensional logistic models, <i>Contemporary Mathematics: Perspectives on Big Data Analysis</i> 622, 141-158.
-  <font face="Times New Roman"><b>
-  </b></font>
-<li> 
-  Searle, C. L., Belden, L. K., <b>Du, P.</b>, and Blaustein, A. R. (2014). 
-  Stress and chytridiomycosis: Exogenous exposure to corticosterone does not alter amphibian susceptibility to a fungal pathogen, <i>Journal of Experimental Zoology Part A: Ecological Genetics and Physiology</i> 321(5), 243-253.
-  <font face="Times New Roman"><b>
-  </b></font>
 <li> 
   Chen, Y., <b>Du, P.</b>, and Wang, Y. (2014). 
   Variable selection in linear models, <i>
   WIREs Computational Statistics</i> 6, 1-9. 
-<br>(a "hopefully" comprehensive review of variable selection for linear regression models)<font face="Times New Roman"><b>
-  </b></font>
+<br>(a "hopefully" comprehensive review of variable selection for linear regression models)
 <li> 
   <b>Du, P.</b> and Wang, X. (2014). 
   Penalized likelihood functional regression, <i>
-  Statistica Sinica</i> 24(2), 1017-1041. (program available at the journal site)<font face="Times New Roman"><b>
-  </b></font>
+  Statistica Sinica</i> 24(2), 1017-1041. (program available at the journal site)
 <li> 
   Wang, X., <b>Du, P.</b>, and Shen, J. (2013). 
   Smoothing splines with varying smoothing parameter, <i>
   Biometrika</i> 100(4), 955-970. (send <a href="mailto:pangdu@vt.edu">us</a>
-an email for the program used in the paper)<font face="Times New Roman"><b>
-  </b></font>
-<li> 
-  Chambers, D. L., Wojdak, J. M., <b>Du, P.</b>, and Belden, L. K. (2013). 
-  Pond acidification may explain differences in corticosterone among salamander populations, <i>Physiological and Biochemical Zoology</i> 2013(2), 224-232.
-  <font face="Times New Roman"><b>
-  </b></font>
+an email for the program used in the paper)
 <li> 
   <b>Du, P.</b>, Parmeter, C. F., and Racine, J. S. (2013). 
   Nonparametric kernel regression with multiple 
-  predictors and multiple shape constraints, <i>Statistica Sinica</i> 23(3), 1347-1371.<font face="Times New Roman"><b>
-  </b></font>
-<li> 
-  <b>Du, P.</b> (2012). 
-  Invited book review for "Smoothing Splines: Methods and Applications" by Yuedong Wang, <i>
-  Biometrics</i> 68(4), 1327-1328.<font face="Times New Roman"><b>
-  </b></font>
+  predictors and multiple shape constraints, <i>Statistica Sinica</i> 23(3), 1347-1371.
 <li> 
   Liang, H. and <b>Du, P.</b> (2012). 
   Maximum likelihood estimation in logistic regression models with a diverging number of covariates, <i>Electronic Journal of Statistics</i> 6, 1838-1846.
-  <font face="Times New Roman"><b>
-  </b></font>
 <li> 
   <b>Du, P.</b>, Cheng, G., and Liang, H. (2012). 
   Semiparametric regression models with additive
   nonparametric components and high dimensional parametric components, <i>Computational Statistics and Data Analysis</i> 56(6), 2006-2017.
-  <font face="Times New Roman"><b>
-  </b></font>
 <li> 
   Wang, L., <b>Du, P.</b>, and Liang, H. (2012). 
   Two-component mixture cure rate model with
   spline estimated nonparametric components, <i>
-  Biometrics</i> 68, 726-735.<font face="Times New Roman"><b>
-  </b></font>
+  Biometrics</i> 68, 726-735.
 <li> 
   Ma, S. and <b>Du, P.</b> (2012). 
   Variable selection in partly linear regression
   model with diverging dimensions for right censored data, <i>
-  Statistica Sinica</i> 22, 1003-1020.<font face="Times New Roman"><b>
-  </b></font>
-<li> 
-  Chambers, D. L., Wojdak, J. M., <b>Du, P.</b>, and Belden, L. K. (2011). 
-  Corticosterone level changes throughout larval development in the amphibians
-  <i>Rana sylvatica</i> and <i>Ambystoma jeffersoniannum</i>, <i>Copeia</i> 2011(4), 530-538.
-  <font face="Times New Roman"><b>
-  </b></font>
+  Statistica Sinica</i> 22, 1003-1020.
 <li> 
   <b>Du, P.</b>, Jiang, Y., and Wang, Y. (2011). 
   Smoothing spline ANOVA frailty
   model for recurrent event data, <i>
-  Biometrics</i> 67, 1330-1339.<font face="Times New Roman"><b>
-  </b></font>
-<li> 
-  Tang, L., <b>Du, P.</b>, and Wu, C. (2010). 
-  Compare diagnostic tests using 
-  transformation-invariant smoothed ROC curves, <i>
-  Journal of Statistical Planning and Inference</i> 140, 3540-3551.<font face="Times New Roman"><b>
-  </b></font>
-<li> 
+  Biometrics</i> 67, 1330-1339.
+li> 
   <b>Du, P.</b> and Ma, S. (2010). 
   Frailty 
   model with spline estimated nonparametric
   hazard function, <i>
-  Statistica Sinica</i> 20(2), 561-581.<font face="Times New Roman"><b>
-  </b></font>
-<li> 
-  Woodall, W. H., Birch, J. B., and <b>Du, P.</b> (2010). 
-  Discussion of "Nonparametric 
-  profile monitoring by mixed effects modeling" by Qiu, Zou and Wang, <i>
-  Technometrics</i> 52, 285-287.<font face="Times New Roman"><b>
-  </b></font>
+  Statistica Sinica</i> 20(2), 561-581.
 <li> 
   <b>Du, P.</b>, Ma, S., and Liang, H. (2010). 
   Penalized 
   variable selection procedure for 
   Cox models with semiparametric relative risk, <i>
-  Annals of Statistics</i> 38, 2092-2117.<font face="Times New Roman"><b>
-  </b></font>
+  Annals of Statistics</i> 38, 2092-2117.
 <li> 
   <b>Du, P.</b> and Tang, L. (2009). 
   Transformation-invariant 
   and nonparametric monotone smooth estimation of ROC curves, <i>
-  Statistics in Medicine </i>28: 349-359.<font face="Times New Roman"><b>
-  </b></font>
-<li> 
-  <b>Du, P.</b> (2009). 
-  Nonparametric 
-  modeling of the gap time in recurrent event data, <i>
-  Lifetime Data Analysis </i> 15: 256-277.<font face="Times New Roman"><b>
-  </b></font>
-<li> 
-  <b>Du, P.</b> and Gu, C. (2009). 
-  Penalized 
-  pseudo-likelihood hazard estimation:
-  a fast alternative to penalized likelihood, <i>
-  Journal of Statistical Planning and Inference </i>139: 891-899.<font face="Times New Roman"><b>
-  </b></font>
-<li>
-  <b>Du, P.</b> and Gu, C. (2006). 
-  Penalized 
-  likelihood hazard estimation:
-  efficient approximation and Bayesian confidence intervals, <i>
-  Statistics and Probability Letters </i>76: 244-254.<font face="Times New Roman"><b>
-  </b></font> 
+  Statistics in Medicine </i>28: 349-359.
 </ul>
 
-
-
+<hr>
+    <footer id="footer">
+        <p>Copyright &#169; 2021, <strong>Pang Du</strong>
+	</footer>
 
 <BR><BR><BR><BR>
 

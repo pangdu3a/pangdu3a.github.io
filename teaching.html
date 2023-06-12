@@ -1,0 +1,97 @@
+
+
+<!-- teaching.html -->
+<HTML>
+<HEAD>
+<TITLE>An Authentic "404 Error!" Page Approved by Professor Pang Du</TITLE>
+<style>
+.topnav {
+  overflow: hidden;
+  background-color: #800000;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #CF4420;
+  color: white;
+}
+</style>
+</HEAD>
+
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000" ONLOAD="show()">
+
+<span id="liveclock" style="position:absolute;right:0;top:0;">
+</span>
+
+<script language="JavaScript">                                             
+<!--
+
+/*
+Upper Right Corner Live Clock Script- ) Dynamic Drive (www.dynamicdrive.com)
+For full source code, 100's more DHTML scripts, and TOS,
+visit http://www.dynamicdrive.com
+*/
+
+function show(){
+ if (!document.layers&&!document.all&&!document.getElementById)
+ return
+ var Digital=new Date()
+ var hours=Digital.getHours()
+ var minutes=Digital.getMinutes()
+ var seconds=Digital.getSeconds()
+ var dn="AM" 
+ if (hours>12){
+ dn="PM"
+ hours=hours-12
+ }
+ if (hours==0)
+ hours=12
+ if (minutes<=9)
+ minutes="0"+minutes
+ if (seconds<=9)
+ seconds="0"+seconds
+//change font size here to your desire
+myclock="<font size='2'>Current Time at Blacksburg, VA, USA: <b>"
+ +hours+":"+minutes+":" +seconds+dn+"</b></font>" 
+if (document.layers){
+document.layers.liveclock.document.write(myclock)
+document.layers.liveclock.document.close()
+}
+else if (document.all)
+liveclock.innerHTML=myclock
+else if (document.getElementById)
+document.getElementById("liveclock").innerHTML=myclock
+setTimeout("show()",1000)
+ }
+
+//-->
+</script>
+
+<br>
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="people.html">People</a>
+  <a href="research.html">Research</a>
+  <a class="active" href="teaching.html">Teaching</a>
+</div>
+
+<p><h3>Why did you even click into this page? Aren't supposed to find all your course information at your <a href="https://canvas.vt.edu/">Canvas</a> page?</h3></p>
+
+<hr>
+    <footer id="footer">
+        <p>Copyright &#169; 2021, <strong>Pang Du</strong>
+	</footer>
+
