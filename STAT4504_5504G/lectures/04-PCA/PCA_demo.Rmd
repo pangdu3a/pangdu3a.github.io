@@ -1,0 +1,315 @@
+
+---
+title: "PCA"
+author: |
+  Jyotishka Datta\\
+  Department of Statistics, Virginia Tech
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+output:
+  beamer_presentation:
+    theme: "Madrid"
+    slide_level: 2
+fontsize: 10pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,
+                      fig.width = 7, fig.height = 5)
+```
+
+## Source
+
+- A lot of R code in this demo is adapted from the excellent book *An Introduction to Statistical Learning with Applications in R* by James, Witten, Hastie, and Tibshirani. The book website provides R code, labs, and other resources.
+- The Crime and Iris data examples were influenced by materials from Dr. Sumanta Basu. PCR code & examples were provided by Dr. Bobby Gramacy.
+
+## Recap (PCA)
+
+Let \(\mathbf{X}\) be an \(n \times p\) data matrix with columns centered (column means subtracted).
+
+**First principal component (PC1)** is the direction \(\boldsymbol{\beta}_1 = (\beta_{11}, \dots, \beta_{p1})^\top\) that maximizes the variance of the projected data, subject to unit length:
+\[
+\max_{\boldsymbol{\beta}_1} \; \frac{1}{n} \sum_{i=1}^n (\mathbf{x}_i^\top \boldsymbol{\beta}_1)^2
+\quad \text{s.t.} \quad \lVert \boldsymbol{\beta}_1 \rVert_2 = 1.
+\]
+The scores are \(y_{i1} = \mathbf{x}_i^\top\boldsymbol{\beta}_1\).
+
+## Second PC
+
+The second principal component \(\boldsymbol{\beta}_2\) solves
+\[
+\max_{\boldsymbol{\beta}_2} \; \frac{1}{n} \sum_{i=1}^n (\mathbf{x}_i^\top \boldsymbol{\beta}_2)^2
+\quad \text{s.t.} \quad \lVert \boldsymbol{\beta}_2 \rVert_2 = 1,\; \boldsymbol{\beta}_1^\top\boldsymbol{\beta}_2 = 0.
+\]
+Scores \(y_{i1}\) and \(y_{i2}\) are uncorrelated by construction.
+
+## Optimization for PCA
+
+Two equivalent computational routes for PCA:
+
+- **SVD of \(\mathbf{X}\)**: \(\mathbf{X} = \mathbf{U}\,\boldsymbol{\Sigma}\,\mathbf{V}^\top\). The columns of \(\mathbf{V}\) are PC loading vectors \(\boldsymbol{\beta}_j\); singular values give standard deviations of PCs.
+- **Eigen-decomposition of covariance**: On centered data, \(\mathbf{X}^\top\mathbf{X}\) eigenvectors are loadings, eigenvalues are variances of PCs.
+
+## Using R
+
+Two common functions:
+
+- `prcomp()` uses an SVD on the (centered/scaled) data matrix (numerically stable).
+- `princomp()` uses an eigen-decomposition of the covariance (or correlation) matrix.
+
+## US Arrests data
+
+**Description.** Statistics in arrests per 100,000 residents for Assault, Murder, and Rape in each of the 50 US states in 1973. Also given is percent of the population in urban areas (`UrbanPop`).
+
+```{r usarrests-setup}
+states <- row.names(USArrests)
+states
+names(USArrests)
+apply(USArrests, 2, mean)
+apply(USArrests, 2, var)
+```
+
+> If we fail to scale variables before PCA, components can be dominated by variables with the largest variance (here, `Assault`).
+
+## PCA on USArrests
+
+```{r usarrests-pca}
+pr.out <- prcomp(USArrests, scale. = TRUE)
+names(pr.out)
+pr.out$center
+pr.out$scale
+```
+
+## Loadings and scores
+
+```{r usarrests-loadings}
+pr.out$rotation  # loadings (each column is a PC loading vector)
+dim(pr.out$x)    # 50 observations x 4 PCs
+```
+
+## Biplot
+
+A biplot visualizes both observations (scores) and variables (loadings).
+
+```{r usarrests-biplot, fig.height=5.5}
+biplot(pr.out, scale = 0, cex = c(0.6, 0.75), xlim = c(-4, 4))
+```
+
+## Sign indeterminacy
+
+Principal components are unique **up to sign**. Flipping the sign of a loading vector and its scores leaves the geometry unchanged.
+
+```{r usarrests-biplot-sign}
+pr.tmp <- pr.out
+pr.tmp$rotation <- -pr.tmp$rotation
+pr.tmp$x <- -pr.tmp$x
+biplot(pr.tmp, scale = 0, cex = c(0.5, 1), xlim = c(-4, 4))
+```
+
+## Importance of scaling
+
+```{r usarrests-noscale}
+biplot(prcomp(USArrests, scale. = FALSE), scale = 0, cex = c(0.5, 1))
+```
+
+## Standard deviations and PVE
+
+```{r usarrests-sdev-pve}
+pr.out$sdev
+pr.var <- pr.out$sdev^2
+pr.var
+pve <- pr.var / sum(pr.var)
+pve
+```
+
+## Proportion of Variance Explained (PVE)
+
+```{r usarrests-pve-plot}
+par(mfrow = c(1, 2))
+barplot(pve, main = "Prop. Variance Explained", ylab = "PVE", ylim = c(0, 1))
+plot(cumsum(pve), type = "b", pch = 19, xlab = "Number of PCs", ylab = "Cumulative PVE",
+     ylim = c(0, 1))
+par(mfrow = c(1, 1))
+```
+
+## More examples (`princomp`)
+
+`prcomp` (SVD on data) and `princomp` (eigen on covariance/correlation) usually agree closely; some prefer `prcomp` for numerical stability.
+
+## PCA for City Crime data
+
+The city crime dataset contains crime rates per 100,000 people for 72 large US cities in 1994. Variables: Murder, Rape, Robbery, Assault, Burglary, Larceny, Motor Vehicle Theft.
+
+```{r crime-read}
+# Place a file named "city_crime.txt" in the project directory.
+# The file should have 7 numeric columns in the order listed above.
+crime <- NULL
+if (file.exists("city_crime.txt")) {
+  crime <- tryCatch({
+    read.table("city_crime.txt", header = TRUE)
+  }, error = function(e) tryCatch({
+    read.table("city_crime.txt", header = FALSE)
+  }, error = function(e2) NULL))
+}
+if (is.null(crime)) {
+  message("city_crime.txt not found or unreadable; subsequent crime PCA plots are skipped.")
+}
+```
+
+## Scatterplot matrix (crime)
+
+```{r crime-pairs, eval=!is.null(crime)}
+pairs(crime)
+```
+
+## PCA on crime data (`princomp`)
+
+```{r crime-princomp, eval=!is.null(crime)}
+pca.crime <- princomp(scale(crime), cor = FALSE)
+summary(pca.crime)
+loadings(pca.crime)
+```
+
+## PVE and scree (crime)
+
+```{r crime-pve-scree, eval=!is.null(crime)}
+PoV <- pca.crime$sdev^2 / sum(pca.crime$sdev^2)
+barplot(PoV, main = "Prop Var Exp")
+screeplot(pca.crime, type = "line")
+```
+
+## Scores and biplot (crime)
+
+```{r crime-scores-biplot, eval=!is.null(crime)}
+pcs.crime <- predict(pca.crime)
+plot(pcs.crime[, 1:2], type = "n", xlab = '1st PC', ylab = '2nd PC')
+text(pcs.crime[, 1:2], row.names(crime))
+biplot(pca.crime, cex = c(0.5, 1))
+```
+
+## Questions
+
+1. Which cities appear most safe? Which are most crime-prone?
+2. How might we interpret high/low values on the second PC?
+
+## Subtle difference: scaling in `prcomp` vs `princomp`
+
+```{r crime-scale-diff, eval=!is.null(crime)}
+pc.cr  <- prcomp(crime, scale = TRUE, center = TRUE)
+pc.cr1 <- princomp(crime, cor = TRUE, scores = TRUE)
+pc.cr$scale
+pc.cr1$scale
+```
+
+## Iris data
+
+We will check if PCA can still detect species after adding noise variables.
+
+```{r iris-setup}
+data(iris)
+str(iris)
+# Matrix of original 4 features
+X_iris <- data.matrix(iris[, 1:4])
+# Add 6 columns of i.i.d. N(0,1) noise as extra dimensions
+set.seed(2023)
+noise <- matrix(rnorm(nrow(X_iris) * 6), ncol = 6)
+# Combine so that noise appears as first 6 columns
+dat.iris <- cbind(noise, X_iris)
+colnames(dat.iris) <- c(paste0('V', 1:6), colnames(X_iris))
+# Standardize before PCA on correlation structure
+dat.iris <- scale(dat.iris, center = TRUE, scale = TRUE)
+pca.iris <- princomp(dat.iris, cor = TRUE)
+```
+
+## Iris PCA: summary and scree
+
+```{r iris-summary}
+summary(pca.iris)
+screeplot(pca.iris, type = "line")
+```
+
+## Iris PC scores and colors
+
+```{r iris-scores-plot}
+pcs.iris <- predict(pca.iris)
+col.code <- as.character(iris$Species)
+col.code[col.code == "setosa"]     <- 'red'
+col.code[col.code == "versicolor"] <- 'blue'
+col.code[col.code == "virginica"]  <- 'green'
+plot(pcs.iris[, 1:2], type = 'p', pch = 15, col = col.code,
+     xlab = "PC1", ylab = "PC2")
+legend("topright", col = c('red','blue','green'),
+       legend = c('setosa','versicolor','virginica'), pch = 15)
+```
+
+## Why PCs can help
+
+Compare to plotting just two (arbitrary) variables in the original space.
+
+```{r iris-compare}
+plot(dat.iris[, 1:2], type='p', pch=15, col=col.code, xlab="X1", ylab="X2")
+legend("topright", col=c('red','blue','green'), legend=c('setosa','versicolor','virginica'), pch=15)
+# Re-plot PC space to emphasize separation
+plot(pcs.iris[, 1:2], type='p', pch=15, col=col.code, xlab="PC1", ylab="PC2")
+legend("bottomleft", col=c('red','blue','green'), legend=c('setosa','versicolor','virginica'), pch=15)
+```
+
+## Principal Components Regression (PCR)
+
+PCR uses the leading PC score columns \(z_1,\dots,z_m\) (with \(m \ll p\)) as predictors in a regression for response \(y\). With orthogonal PCs, the OLS fit decomposes into a sum of univariate regressions in the PC scores.
+
+## PCR: backing out coefficients
+
+Each PC is a linear combination of the original (scaled) variables, so PCR coefficients in the original feature space can be recovered from the PC loadings and the regression on PC scores.
+
+## Toy PCR example (olive oil)
+
+```{r pcr-oliveoil}
+# Ensure pls is available
+if (!requireNamespace("pls", quietly = TRUE)) {
+  install.packages("pls", repos = "https://cloud.r-project.org")
+}
+library(pls)
+data(oliveoil)
+# Response: first sensory score; Predictors: chemical measurements
+set.seed(1)
+y <- as.numeric(oliveoil$sensory[, 1])
+X <- as.matrix(oliveoil$chemical)
+# Standardize predictors
+for (j in 1:ncol(X)) X[, j] <- X[, j] / sd(X[, j])
+# PCA via eigen decomposition of covariance
+S  <- cov(X)
+eS <- eigen(S, symmetric = TRUE)
+Z  <- X %*% eS$vectors
+colnames(Z) <- paste0("PC", 1:ncol(Z))
+# Fraction of variance explained
+cumsum(eS$values) / sum(eS$values)
+# Use first three PCs (plus intercept) for regression
+Zp <- cbind(1, Z[, 1:3, drop = FALSE])
+theta.pcr <- drop(solve(t(Zp) %*% Zp) %*% t(Zp) %*% y)
+# Map back to original coefficients (including intercept)
+beta.pcr <- c(theta.pcr[1], eS$vectors[, 1:3, drop = FALSE] %*% theta.pcr[-1])
+names(beta.pcr) <- c("Intercept", colnames(oliveoil$chemical))
+beta.pcr
+```
+
+## PCR via `pls::pcr()` and CV
+
+```{r pcr-pls}
+fit.pcr <- pcr(y ~ X, ncomp = 3)
+rbind(automated = coef(fit.pcr, intercept = TRUE), byhand = as.numeric(beta.pcr))
+cv.pcr <- pcr(y ~ X, validation = "LOO")
+RMSEP(cv.pcr)
+plot(RMSEP(cv.pcr), main = "")
+```
+
+---
+
+### Reproducibility notes
+
+- Rendering this file to PDF requires a LaTeX installation. If you use R, you can install TinyTeX via:
+  
+  ```r
+  if (!requireNamespace("tinytex", quietly = TRUE)) install.packages("tinytex"); tinytex::install_tinytex()
+  ```
+- To include the city crime example, add `city_crime.txt` to the working directory.
+- Tested with R \u2265 4.0 and packages in CRAN.
